@@ -46,9 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
     Saham bren = Saham(ticker: "BREN", open: 4500, high: 4610, last: 4580, change: "1,78");
     Saham cuan = Saham(ticker: "CUAN", open: 5200, high: 5525, last: 5400, change: "3,85");
 
-    List<Saham> listOfSahams = [tlkm, ammn, bren, cuan];
+    List<Saham> listOfSTOCKID = [tlkm, ammn, bren, cuan];
 
-    return await this.handler.insertSaham(listOfSahams);
+    return await this.handler.insertSaham(listOfSTOCKID);
   }
 
   @override
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     this.handler = DatabaseHandler();
     this.handler.initializeDB().whenComplete(() async {
-      await this.addSahams();
+      await this.addSTOCKID();
       setState(() {});
     });
   }
